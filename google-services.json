@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "842001890366",
+    "project_id": "midaliyara-app",
+    "storage_bucket": "midaliyara-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:842001890366:android:d43727fc9ea449ad41256f",
+        "android_client_info": {
+          "package_name": "com.anonymous.midaliayaapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaHHOokixabpQYjVpGBsb_qmuw7rltZso"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
