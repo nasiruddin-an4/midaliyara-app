@@ -1,0 +1,34 @@
+name: EAS Update
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update:
+    name: Publish EAS Update
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+          cache: npm
+
+      - name: Setup Expo
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: Install dependencies
+        # Uses npm install instead of npm ci just in case package-lock.json isn't perfectly synced yet
+        run: npm install
+
+      - name: Publish Update to Preview Channel
+        # This will instantly push your Javascript and Asset changes to anyone who downloaded the "preview" APK
+        run: eas update --branch preview --message "Automated OTA update from GitHub Actions: ${{ github.event.head_commit.message }}"

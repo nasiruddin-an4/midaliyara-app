@@ -4,7 +4,7 @@
     "slug": "midaliaya-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/mainLogo.png",
     "scheme": "midaliayaapp",
     "userInterfaceStyle": "automatic",
     "ios": {
@@ -13,15 +13,14 @@
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/images/android-icon-foreground.png",
-        "backgroundImage": "./assets/images/android-icon-background.png",
-        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+        "foregroundImage": "./assets/mainLogo.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.anonymous.midaliayaapp"
     },
     "web": {
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/mainLogo.png"
     },
     "plugins": [
       "expo-router",
@@ -30,15 +29,28 @@
         {
           "backgroundColor": "#208AEF",
           "android": {
-            "image": "./assets/images/splash-icon.png",
+            "image": "./assets/mainLogo.png",
             "imageWidth": 76
           }
         }
-      ]
+      ],
+      "expo-notifications"
     ],
     "experiments": {
-      "typedRoutes": true,
+      "typedRoutes": false,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "9c060858-a033-4098-adb6-d42764c2423f"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/9c060858-a033-4098-adb6-d42764c2423f"
     }
   }
 }
