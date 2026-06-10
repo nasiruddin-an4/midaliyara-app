@@ -31,6 +31,4 @@ jobs:
 
       - name: Publish Update to Preview Channel
         # This will instantly push your Javascript and Asset changes to anyone who downloaded the "preview" APK
-        env:
-          COMMIT_MSG: ${{ github.event.head_commit.message }}
-        run: eas update --branch preview --message "Automated OTA update: $COMMIT_MSG"
+        run: eas update --branch preview --message "Automated OTA update from GitHub Actions" --non-interactive
